@@ -1,5 +1,5 @@
 ---
-abstract: 'Interface to the calendar used by Bahai faith.'
+abstract: 'Interface to Bahai Calendar.'
 author:
   - 'Mohammad S Anwar <mohammad.anwar@yahoo.com>'
 build_requires:
@@ -19,7 +19,7 @@ name: Calendar-Bahai
 provides:
   Calendar::Bahai:
     file: lib/Calendar/Bahai.pm
-    version: 0.01
+    version: 0.02
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01
+version: 0.02

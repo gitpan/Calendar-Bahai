@@ -4,15 +4,15 @@ use strict; use warnings;
 
 =head1 NAME
 
-Calendar::Bahai - Interface to the calendar used by Bahai faith.
+Calendar::Bahai - Interface to Bahai Calendar.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Carp;
 use Readonly;
@@ -27,7 +27,7 @@ Readonly my $GREGORIAN_EPOCH => 1721425.5;
 
 Readonly my $MONTHS =>
 [
-    '',
+    undef,
     'Baha',    'Jalal', 'Jamal',  'Azamat', 'Nur',       'Rahmat',
     'Kalimat', 'Kamal', 'Asma',   'Izzat',  'Mashiyyat', 'Ilm',
     'Qudrat',  'Qawl',  'Masail', 'Sharaf', 'Sultan',    'Mulk',
@@ -36,7 +36,7 @@ Readonly my $MONTHS =>
 
 Readonly my $CYCLES =>
 [
-    '',
+    undef,
     'Alif', 'Ba',     'Ab',    'Dal',  'Bab',    'Vav',
     'Abad', 'Jad',    'Baha',  'Hubb', 'Bahhaj', 'Javab',
     'Ahad', 'Vahhab', 'Vidad', 'Badi', 'Bahi',   'Abha',
@@ -101,38 +101,45 @@ was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
 
 =head2 Months Names
 
-    Month     Arabic Name     English Translation     Gregorian Dates
-    1         Baha            Splendour               21 Mar - 08 Apr
-    2         Jalal           Glory                   09 Apr - 27 Apr
-    3         Jamal           Beauty                  28 Apr - 16 May
-    4         Azamat          Grandeur                17 May - 04 Jun
-    5         Nur             Light                   05 Jun - 23 Jun
-    6         Rahmat          Mercy                   24 Jun - 12 Jul
-    7         Kalimat         Words                   13 Jul - 31 Jul
-    8         Kamal           Perfection              01 Aug - 19 Aug
-    9         Asma            Names                   20 Aug - 07 Sep
-    10        Izzat           Might                   08 Sep - 26 Sep
-    11        Mashiyyat       Will                    27 Sep - 15 Oct
-    12        Ilm             Knowledge               16 Oct - 03 Nov
-    13        Qudrat          Power                   04 Nov - 22 Nov
-    14        Qawl            Speech                  23 Nov - 11 Dec
-    15        Masail          Questions               12 Dec - 30 Dec
-    16        Sharaf          Honour                  31 Dec - 18 Jan
-    17        Sultan          Sovereignty             19 Jan - 06 Feb
-    18        Mulk            Dominion                07 Feb - 25 Feb
-              Ayyam-i-Ha      The Days of Ha          26 Feb - 01 Mar
-    19        Ala             Loftiness               02 Mar - 20 Mar (Month of fasting)
+    ---------------------------------------------------------------------------
+    | Month     | Arabic Name     | English Translation    |  Gregorian Dates |
+    ---------------------------------------------------------------------------
+    |  1        | Baha            | Splendour              | 21 Mar - 08 Apr  | 
+    |  2        | Jalal           | Glory                  | 09 Apr - 27 Apr  | 
+    |  3        | Jamal           | Beauty                 | 28 Apr - 16 May  | 
+    |  4        | Azamat          | Grandeur               | 17 May - 04 Jun  | 
+    |  5        | Nur             | Light                  | 05 Jun - 23 Jun  | 
+    |  6        | Rahmat          | Mercy                  | 24 Jun - 12 Jul  | 
+    |  7        | Kalimat         | Words                  | 13 Jul - 31 Jul  | 
+    |  8        | Kamal           | Perfection             | 01 Aug - 19 Aug  | 
+    |  9        | Asma            | Names                  | 20 Aug - 07 Sep  | 
+    | 10        | Izzat           | Might                  | 08 Sep - 26 Sep  | 
+    | 11        | Mashiyyat       | Will                   | 27 Sep - 15 Oct  | 
+    | 12        | Ilm             | Knowledge              | 16 Oct - 03 Nov  | 
+    | 13        | Qudrat          | Power                  | 04 Nov - 22 Nov  | 
+    | 14        | Qawl            | Speech                 | 23 Nov - 11 Dec  | 
+    | 15        | Masail          | Questions              | 12 Dec - 30 Dec  | 
+    | 16        | Sharaf          | Honour                 | 31 Dec - 18 Jan  | 
+    | 17        | Sultan          | Sovereignty            | 19 Jan - 06 Feb  | 
+    | 18        | Mulk            | Dominion               | 07 Feb - 25 Feb  | 
+    |           | Ayyam-i-Ha      | The Days of Ha         | 26 Feb - 01 Mar  | 
+    | 19        | Ala             | Loftiness              | 02 Mar - 20 Mar  | 
+    |           |                 |                        |(Month of fasting)|
+    ---------------------------------------------------------------------------
 
 =head2 Weekdays
 
-    Arabic Name     English Translation     Day of the Week
-    Jalal           Glory                   Saturday
-    Jamal           Beauty                  Sunday
-    Kamal           Perfection              Monday
-    Fidal           Grace                   Tuesday
-    Idal            Justice                 Wednesday
-    Istijlal        Majesty                 Thursday
-    Istiqlal        Independence            Friday
+    --------------------------------------------------------------
+    | Arabic Name   |  English Translation   |  Day of the Week  |
+    --------------------------------------------------------------
+    | Jalal         |  Glory                 |  Saturday         |
+    | Jamal         |  Beauty                |  Sunday           |
+    | Kamal         |  Perfection            |  Monday           |
+    | Fidal         |  Grace                 |  Tuesday          |
+    | Idal          |  Justice               |  Wednesday        |
+    | Istijlal      |  Majesty               |  Thursday         |
+    | Istiqlal      |  Independence          |  Friday           |
+    --------------------------------------------------------------
     
 =head2     Kull-i-Shay and Vahid
 
@@ -143,26 +150,29 @@ March 2011 - 20 March 2012), is year Badi of the 9th Vahid of the 1st Kull-i-Sha
 
 =head2 1st Kull-i-Shay
 
-    No.  Name     Meaning         1        2        3        4        5        6        7        8        9        10       11       12       13       14       15       16       17       18       19
-    1    Alif     A               1844     1863     1882     1901     1920     1939     1958     1977     1996     2015     2034     2053     2072     2091     2110     2129     2148     2167     2186
-    2    Ba       B               1845     1864     1883     1902     1921     1940     1959     1978     1997     2016     2035     2054     2073     2092     2111     2130     2149     2168     2187
-    3    Ab       Father          1846     1865     1884     1903     1922     1941     1960     1979     1998     2017     2036     2055     2074     2093     2112     2131     2150     2169     2188
-    4    Dal      D               1847     1866     1885     1904     1923     1942     1961     1980     1999     2018     2037     2056     2075     2094     2113     2132     2151     2170     2189
-    5    Bab      Gate            1848     1867     1886     1905     1924     1943     1962     1981     2000     2019     2038     2057     2076     2095     2114     2133     2152     2171     2190
-    6    Vav      V               1849     1868     1887     1906     1925     1944     1963     1982     2001     2020     2039     2058     2077     2096     2115     2134     2153     2172     2191
-    7    Abad     Eternity        1850     1869     1888     1907     1926     1945     1964     1983     2002     2021     2040     2059     2078     2097     2116     2135     2154     2173     2192
-    8    Jad      Generosity      1851     1870     1889     1908     1927     1946     1965     1984     2003     2022     2041     2060     2079     2098     2117     2136     2155     2174     2193
-    9    Baha     Splendour       1852     1871     1890     1909     1928     1947     1966     1985     2004     2023     2042     2061     2080     2099     2118     2137     2156     2175     2194
-    10   Hubb     Love            1853     1872     1891     1910     1929     1948     1967     1986     2005     2024     2043     2062     2081     2100     2119     2138     2157     2176     2195
-    11   Bahhaj   Delightful      1854     1873     1892     1911     1930     1949     1968     1987     2006     2025     2044     2063     2082     2101     2120     2139     2158     2177     2196
-    12   Javab    Answer          1855     1874     1893     1912     1931     1950     1969     1988     2007     2026     2045     2064     2083     2102     2121     2140     2159     2178     2197
-    13   Ahad     Single          1856     1875     1894     1913     1932     1951     1970     1989     2008     2027     2046     2065     2084     2103     2122     2141     2160     2179     2198
-    14   Vahhab   Bountiful       1857     1876     1895     1914     1933     1952     1971     1990     2009     2028     2047     2066     2085     2104     2123     2142     2161     2180     2199
-    15   Vidad    Affection       1858     1877     1896     1915     1934     1953     1972     1991     2010     2029     2048     2067     2086     2105     2124     2143     2162     2181     2200
-    16   Badi     Beginning       1859     1878     1897     1916     1935     1954     1973     1992     2011     2030     2049     2068     2087     2106     2125     2144     2163     2182     2201
-    17   Bahi     Luminous        1860     1879     1898     1917     1936     1955     1974     1993     2012     2031     2050     2069     2088     2107     2126     2145     2164     2183     2202
-    18   Abha     Most Luminous   1861     1880     1899     1918     1937     1956     1975     1994     2013     2032     2051     2070     2089     2108     2127     2146     2165     2184     2203
-    19   Vahid    Unity           1862     1881     1900     1919     1938     1957     1976     1995     2014     2033     2052     2071     2090     2109     2128     2147     2166     2185     2204
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    | No. | Name     | Meaning       |   1  |  2   |  3   |  4   |   5  |  6   |   7  |   8  |   9  |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    |  1  |  Alif    | A             | 1844 | 1863 | 1882 | 1901 | 1920 | 1939 | 1958 | 1977 | 1996 | 2015 | 2034 | 2053 | 2072 | 2091 | 2110 | 2129 | 2148 | 2167 | 2186 |
+    |  2  |  Ba      | B             | 1845 | 1864 | 1883 | 1902 | 1921 | 1940 | 1959 | 1978 | 1997 | 2016 | 2035 | 2054 | 2073 | 2092 | 2111 | 2130 | 2149 | 2168 | 2187 |
+    |  3  |  Ab      | Father        | 1846 | 1865 | 1884 | 1903 | 1922 | 1941 | 1960 | 1979 | 1998 | 2017 | 2036 | 2055 | 2074 | 2093 | 2112 | 2131 | 2150 | 2169 | 2188 |
+    |  4  |  Dal     | D             | 1847 | 1866 | 1885 | 1904 | 1923 | 1942 | 1961 | 1980 | 1999 | 2018 | 2037 | 2056 | 2075 | 2094 | 2113 | 2132 | 2151 | 2170 | 2189 |
+    |  5  |  Bab     | Gate          | 1848 | 1867 | 1886 | 1905 | 1924 | 1943 | 1962 | 1981 | 2000 | 2019 | 2038 | 2057 | 2076 | 2095 | 2114 | 2133 | 2152 | 2171 | 2190 |
+    |  6  |  Vav     | V             | 1849 | 1868 | 1887 | 1906 | 1925 | 1944 | 1963 | 1982 | 2001 | 2020 | 2039 | 2058 | 2077 | 2096 | 2115 | 2134 | 2153 | 2172 | 2191 |
+    |  7  |  Abad    | Eternity      | 1850 | 1869 | 1888 | 1907 | 1926 | 1945 | 1964 | 1983 | 2002 | 2021 | 2040 | 2059 | 2078 | 2097 | 2116 | 2135 | 2154 | 2173 | 2192 |
+    |  8  |  Jad     | Generosity    | 1851 | 1870 | 1889 | 1908 | 1927 | 1946 | 1965 | 1984 | 2003 | 2022 | 2041 | 2060 | 2079 | 2098 | 2117 | 2136 | 2155 | 2174 | 2193 | 
+    |  9  |  Baha    | Splendour     | 1852 | 1871 | 1890 | 1909 | 1928 | 1947 | 1966 | 1985 | 2004 | 2023 | 2042 | 2061 | 2080 | 2099 | 2118 | 2137 | 2156 | 2175 | 2194 |
+    | 10  |  Hubb    | Love          | 1853 | 1872 | 1891 | 1910 | 1929 | 1948 | 1967 | 1986 | 2005 | 2024 | 2043 | 2062 | 2081 | 2100 | 2119 | 2138 | 2157 | 2176 | 2195 |
+    | 11  |  Bahhaj  | Delightful    | 1854 | 1873 | 1892 | 1911 | 1930 | 1949 | 1968 | 1987 | 2006 | 2025 | 2044 | 2063 | 2082 | 2101 | 2120 | 2139 | 2158 | 2177 | 2196 |
+    | 12  |  Javab   | Answer        | 1855 | 1874 | 1893 | 1912 | 1931 | 1950 | 1969 | 1988 | 2007 | 2026 | 2045 | 2064 | 2083 | 2102 | 2121 | 2140 | 2159 | 2178 | 2197 |
+    | 13  |  Ahad    | Single        | 1856 | 1875 | 1894 | 1913 | 1932 | 1951 | 1970 | 1989 | 2008 | 2027 | 2046 | 2065 | 2084 | 2103 | 2122 | 2141 | 2160 | 2179 | 2198 |
+    | 14  |  Vahhab  | Bountiful     | 1857 | 1876 | 1895 | 1914 | 1933 | 1952 | 1971 | 1990 | 2009 | 2028 | 2047 | 2066 | 2085 | 2104 | 2123 | 2142 | 2161 | 2180 | 2199 |
+    | 15  |  Vidad   | Affection     | 1858 | 1877 | 1896 | 1915 | 1934 | 1953 | 1972 | 1991 | 2010 | 2029 | 2048 | 2067 | 2086 | 2105 | 2124 | 2143 | 2162 | 2181 | 2200 |
+    | 16  |  Badi    | Beginning     | 1859 | 1878 | 1897 | 1916 | 1935 | 1954 | 1973 | 1992 | 2011 | 2030 | 2049 | 2068 | 2087 | 2106 | 2125 | 2144 | 2163 | 2182 | 2201 |
+    | 17  |  Bahi    | Luminous      | 1860 | 1879 | 1898 | 1917 | 1936 | 1955 | 1974 | 1993 | 2012 | 2031 | 2050 | 2069 | 2088 | 2107 | 2126 | 2145 | 2164 | 2183 | 2202 |
+    | 18  |  Abha    | Most Luminous | 1861 | 1880 | 1899 | 1918 | 1937 | 1956 | 1975 | 1994 | 2013 | 2032 | 2051 | 2070 | 2089 | 2108 | 2127 | 2146 | 2165 | 2184 | 2203 |
+    | 19  |  Vahid   | Unity         | 1862 | 1881 | 1900 | 1919 | 1938 | 1957 | 1976 | 1995 | 2014 | 2033 | 2052 | 2071 | 2090 | 2109 | 2128 | 2147 | 2166 | 2185 | 2204 |
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 =head1 METHODS
 
@@ -193,7 +203,7 @@ Return today's date in Bahai calendar as list in the format major,cycle,yyyy,mm,
     use Calendar::Bahai;
 
     my $calendar = Calendar::Bahai->new();
-    my ($major, $cycle, $yyyy, $mm, $dd) = $bahai->today();
+    my ($major, $cycle, $yyyy, $mm, $dd) = $calendar->today();
     print "Major [$major] Cycle [$cycle] Year [$yyyy] Month [$mm] Day [$dd]\n";
 
 =cut
@@ -245,10 +255,10 @@ calendar if no argument is passed in.
     use Calendar::Bahai;
 
     my $calendar = Calendar::Bahai->new();
-    print $saka->get_calendar();
+    print $calendar->get_calendar();
 
     # Print calendar for year 168 and month 1.
-    print $saka->get_calendar(168, 1);
+    print $calendar->get_calendar(168, 1);
 
 =cut
 
