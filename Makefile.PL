@@ -14,7 +14,6 @@ WriteMakefile(
         'Time::localtime' => 1.02,
         'List::Util'      => 1.21,
         'Date::Calc'      => 5.7,
-        
     },
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'perl')

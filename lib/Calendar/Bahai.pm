@@ -8,11 +8,11 @@ Calendar::Bahai - Interface to Bahai Calendar.
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Carp;
 use Readonly;
@@ -490,10 +490,10 @@ sub _validate_date
 
     croak("ERROR: Invalid year [$yyyy].\n")
         unless (defined($yyyy) && ($yyyy =~ /^\d+$/) && ($yyyy > 0));
-    croak("ERROR: Invalid month number [$mm].\n")
-        unless (defined($mm) && ($mm =~ /^\d{1,2}$/) && ($mm >= 1 || $mm <= 19));
-    croak("ERROR: Invalid day number [$dd].\n")
-        unless (defined($dd) && ($dd =~ /^\d{1,2}$/) && ($dd >= 1 || $dd <= 19));
+    croak("ERROR: Invalid month [$mm].\n")
+        unless (defined($mm) && ($mm =~ /^\d{1,2}$/) && ($mm >= 1) && ($mm <= 19));
+    croak("ERROR: Invalid day [$dd].\n")
+        unless (defined($dd) && ($dd =~ /^\d{1,2}$/) && ($dd >= 1) && ($dd <= 19));
 }
 
 =head1 AUTHOR
