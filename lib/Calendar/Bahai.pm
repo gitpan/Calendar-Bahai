@@ -8,11 +8,11 @@ Calendar::Bahai - Interface to Bahai Calendar.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use Carp;
 use Readonly;
@@ -90,8 +90,7 @@ calendar  is composed of 19 months, each with 19 days. Years in the Bahai calend
 from Thursday, 21 March 1844,the beginning of the Bahai Era or Badi Era (abbreviated BE/B.E.). 
 Year 1 BE thus began at sundown 20 March 1844. Using the Bahai names for the weekday and month,  
 day one of the Bahai Era was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
-
-=head2 Bahai Calendar for the month of Baha year 168 BE.
+Bahai Calendar for the month of Baha year 168 BE.
 
             Baha [168 BE]
 
@@ -100,7 +99,7 @@ day one of the Bahai Era was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
       7    8    9   10   11   12   13
      14   15   16   17   18   19
 
-=head2 Months Names
+=head1 MONTHS
 
     +-------+---------------+----------------+------------------+
     | Month | Name (Arabic) | Name (English) |  Gregorian Dates |
@@ -128,7 +127,7 @@ day one of the Bahai Era was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
     |       |               |                |(Month of fasting)|
     +-------+---------------+----------------+------------------+
 
-=head2 Weekdays
+=head1 WEEKDAYS
 
     +---------------+----------------+-------------+
     | Name (Arabic) | Name (English) | Day of Week |
@@ -142,7 +141,7 @@ day one of the Bahai Era was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
     | Istiqlal      | Independence   | Friday      |
     +---------------+----------------+-------------+
     
-=head2     Kull-i-Shay and Vahid
+=head1 Kull-i-Shay and Vahid
 
 Also  existing  in  the  Bahai  calendar system is a 19-year cycle called Vahid and a 361-year
 (19x19)  supercycle  called  Kull-i-Shay (literally, "All Things").  Each of the 19 years in a 
@@ -150,8 +149,6 @@ Vahid  has been given a name as shown in the table below. The 9th Vahid of the 1
 started  on 21 March 1996, and the 10th Vahid will begin in 2015. The current Bahai year, year 
 168 BE (21 March 2011 - 20 March 2012),  is year Badi of the 9th Vahid of the 1st Kull-i-Shay. 
 The 2nd Kull-i-Shay will begin in 2205.
-
-=head2 1st Kull-i-Shay
 
     +-----+----------+---------------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+
     | No. | Name     | Meaning       |   1  |  2   |  3   |  4   |   5  |  6   |   7  |   8  |   9  |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |
@@ -218,7 +215,7 @@ sub today
     return $self->from_gregorian($today->year+1900, $today->mon+1, $today->mday);
 }
 
-=head2 dow(yyyy, mm, dd)
+=head2 dow()
 
 Get day of the week of the given Bahai date, starting with sunday (0).
 
@@ -249,7 +246,7 @@ sub dow
     return Day_of_Week(@gregorian);
 }
 
-=head2 get_calendar(yyyy, mm)
+=head2 get_calendar()
 
 Return  calendar for given year and month in Bahai calendar. It returns current month of Bahai
 calendar if no argument is passed in.
@@ -297,7 +294,7 @@ sub get_calendar
     return sprintf("%s\n\n", $calendar);
 }
 
-=head2 from_gregorian(yyyy, mm, dd)
+=head2 from_gregorian()
 
 Convert Gregorian date to Bahai date.
 
@@ -386,7 +383,7 @@ sub from_julian
     return ($major, $cycle, $yyyy, $mm, $dd);
 }
 
-=head2 to_julian(major, cycle, yyyy, mm, dd)
+=head2 to_julian()
 
 Convert Bahai date to Julian date.
 
