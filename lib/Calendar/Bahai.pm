@@ -8,11 +8,11 @@ Calendar::Bahai - Interface to Bahai Calendar.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Carp;
 use Readonly;
@@ -85,10 +85,11 @@ sub new
 
 =head1 SYNOPSIS
 
-The Bahai calendar started from the original Badi calendar, created by the Bab. The Bahai calendar is composed of 19 months, each with 
-19 days. Years in the Bahai calendar are counted from Thursday, 21 March 1844, the beginning of the Bahai Era or Badi Era (abbreviated 
-BE or B.E.). Year 1 BE thus began at sundown 20 March 1844. Using the Bahai names for the weekday and month,  day one of the Bahai Era 
-was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
+The  Bahai  calendar  started  from  the original Badi calendar, created by the Bab. The Bahai
+calendar  is composed of 19 months, each with 19 days. Years in the Bahai calendar are counted 
+from Thursday, 21 March 1844,the beginning of the Bahai Era or Badi Era (abbreviated BE/B.E.). 
+Year 1 BE thus began at sundown 20 March 1844. Using the Bahai names for the weekday and month,  
+day one of the Bahai Era was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
 
 =head2 Bahai Calendar for the month of Baha year 168 BE.
 
@@ -101,58 +102,60 @@ was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
 
 =head2 Months Names
 
-    ---------------------------------------------------------------------------
-    | Month     | Arabic Name     | English Translation    |  Gregorian Dates |
-    ---------------------------------------------------------------------------
-    |  1        | Baha            | Splendour              | 21 Mar - 08 Apr  | 
-    |  2        | Jalal           | Glory                  | 09 Apr - 27 Apr  | 
-    |  3        | Jamal           | Beauty                 | 28 Apr - 16 May  | 
-    |  4        | Azamat          | Grandeur               | 17 May - 04 Jun  | 
-    |  5        | Nur             | Light                  | 05 Jun - 23 Jun  | 
-    |  6        | Rahmat          | Mercy                  | 24 Jun - 12 Jul  | 
-    |  7        | Kalimat         | Words                  | 13 Jul - 31 Jul  | 
-    |  8        | Kamal           | Perfection             | 01 Aug - 19 Aug  | 
-    |  9        | Asma            | Names                  | 20 Aug - 07 Sep  | 
-    | 10        | Izzat           | Might                  | 08 Sep - 26 Sep  | 
-    | 11        | Mashiyyat       | Will                   | 27 Sep - 15 Oct  | 
-    | 12        | Ilm             | Knowledge              | 16 Oct - 03 Nov  | 
-    | 13        | Qudrat          | Power                  | 04 Nov - 22 Nov  | 
-    | 14        | Qawl            | Speech                 | 23 Nov - 11 Dec  | 
-    | 15        | Masail          | Questions              | 12 Dec - 30 Dec  | 
-    | 16        | Sharaf          | Honour                 | 31 Dec - 18 Jan  | 
-    | 17        | Sultan          | Sovereignty            | 19 Jan - 06 Feb  | 
-    | 18        | Mulk            | Dominion               | 07 Feb - 25 Feb  | 
-    |           | Ayyam-i-Ha      | The Days of Ha         | 26 Feb - 01 Mar  | 
-    | 19        | Ala             | Loftiness              | 02 Mar - 20 Mar  | 
-    |           |                 |                        |(Month of fasting)|
-    ---------------------------------------------------------------------------
+    +-------+---------------+----------------+------------------+
+    | Month | Name (Arabic) | Name (English) |  Gregorian Dates |
+    +-------+---------------+----------------+------------------+
+    |   1   | Baha          | Splendour      | 21 Mar - 08 Apr  | 
+    |   2   | Jalal         | Glory          | 09 Apr - 27 Apr  | 
+    |   3   | Jamal         | Beauty         | 28 Apr - 16 May  | 
+    |   4   | Azamat        | Grandeur       | 17 May - 04 Jun  | 
+    |   5   | Nur           | Light          | 05 Jun - 23 Jun  | 
+    |   6   | Rahmat        | Mercy          | 24 Jun - 12 Jul  | 
+    |   7   | Kalimat       | Words          | 13 Jul - 31 Jul  | 
+    |   8   | Kamal         | Perfection     | 01 Aug - 19 Aug  | 
+    |   9   | Asma          | Names          | 20 Aug - 07 Sep  | 
+    |  10   | Izzat         | Might          | 08 Sep - 26 Sep  | 
+    |  11   | Mashiyyat     | Will           | 27 Sep - 15 Oct  | 
+    |  12   | Ilm           | Knowledge      | 16 Oct - 03 Nov  | 
+    |  13   | Qudrat        | Power          | 04 Nov - 22 Nov  | 
+    |  14   | Qawl          | Speech         | 23 Nov - 11 Dec  | 
+    |  15   | Masail        | Questions      | 12 Dec - 30 Dec  | 
+    |  16   | Sharaf        | Honour         | 31 Dec - 18 Jan  | 
+    |  17   | Sultan        | Sovereignty    | 19 Jan - 06 Feb  | 
+    |  18   | Mulk          | Dominion       | 07 Feb - 25 Feb  | 
+    |       | Ayyam-i-Ha    | The Days of Ha | 26 Feb - 01 Mar  | 
+    |  19   | Ala           | Loftiness      | 02 Mar - 20 Mar  | 
+    |       |               |                |(Month of fasting)|
+    +-------+---------------+----------------+------------------+
 
 =head2 Weekdays
 
-    --------------------------------------------------------------
-    | Arabic Name   |  English Translation   |  Day of the Week  |
-    --------------------------------------------------------------
-    | Jalal         |  Glory                 |  Saturday         |
-    | Jamal         |  Beauty                |  Sunday           |
-    | Kamal         |  Perfection            |  Monday           |
-    | Fidal         |  Grace                 |  Tuesday          |
-    | Idal          |  Justice               |  Wednesday        |
-    | Istijlal      |  Majesty               |  Thursday         |
-    | Istiqlal      |  Independence          |  Friday           |
-    --------------------------------------------------------------
+    +---------------+----------------+-------------+
+    | Name (Arabic) | Name (English) | Day of Week |
+    +---------------+----------------+-------------+
+    | Jalal         | Glory          | Saturday    |
+    | Jamal         | Beauty         | Sunday      |
+    | Kamal         | Perfection     | Monday      |
+    | Fidal         | Grace          | Tuesday     |
+    | Idal          | Justice        | Wednesday   |
+    | Istijlal      | Majesty        | Thursday    |
+    | Istiqlal      | Independence   | Friday      |
+    +---------------+----------------+-------------+
     
 =head2     Kull-i-Shay and Vahid
 
-Also existing in the Bahai calendar system is a 19-year cycle called Vahid and a 361-year (19x19) supercycle called Kull-i-Shay 
-(literally, "All Things").  Each of the 19 years in a Vahid has been given a name as shown in the table below. The 9th Vahid of 
-the 1st Kull-i-Shay  started  on 21 March 1996,  and the 10th Vahid will begin in 2015. The current Bahai year, year 168 BE (21 
-March 2011 - 20 March 2012), is year Badi of the 9th Vahid of the 1st Kull-i-Shay. The 2nd Kull-i-Shay will begin in 2205.
+Also  existing  in  the  Bahai  calendar system is a 19-year cycle called Vahid and a 361-year
+(19x19)  supercycle  called  Kull-i-Shay (literally, "All Things").  Each of the 19 years in a 
+Vahid  has been given a name as shown in the table below. The 9th Vahid of the 1st Kull-i-Shay  
+started  on 21 March 1996, and the 10th Vahid will begin in 2015. The current Bahai year, year 
+168 BE (21 March 2011 - 20 March 2012),  is year Badi of the 9th Vahid of the 1st Kull-i-Shay. 
+The 2nd Kull-i-Shay will begin in 2205.
 
 =head2 1st Kull-i-Shay
 
-    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    +-----+----------+---------------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+
     | No. | Name     | Meaning       |   1  |  2   |  3   |  4   |   5  |  6   |   7  |   8  |   9  |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |
-    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    +-----+----------+---------------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+
     |  1  |  Alif    | A             | 1844 | 1863 | 1882 | 1901 | 1920 | 1939 | 1958 | 1977 | 1996 | 2015 | 2034 | 2053 | 2072 | 2091 | 2110 | 2129 | 2148 | 2167 | 2186 |
     |  2  |  Ba      | B             | 1845 | 1864 | 1883 | 1902 | 1921 | 1940 | 1959 | 1978 | 1997 | 2016 | 2035 | 2054 | 2073 | 2092 | 2111 | 2130 | 2149 | 2168 | 2187 |
     |  3  |  Ab      | Father        | 1846 | 1865 | 1884 | 1903 | 1922 | 1941 | 1960 | 1979 | 1998 | 2017 | 2036 | 2055 | 2074 | 2093 | 2112 | 2131 | 2150 | 2169 | 2188 |
@@ -172,7 +175,7 @@ March 2011 - 20 March 2012), is year Badi of the 9th Vahid of the 1st Kull-i-Sha
     | 17  |  Bahi    | Luminous      | 1860 | 1879 | 1898 | 1917 | 1936 | 1955 | 1974 | 1993 | 2012 | 2031 | 2050 | 2069 | 2088 | 2107 | 2126 | 2145 | 2164 | 2183 | 2202 |
     | 18  |  Abha    | Most Luminous | 1861 | 1880 | 1899 | 1918 | 1937 | 1956 | 1975 | 1994 | 2013 | 2032 | 2051 | 2070 | 2089 | 2108 | 2127 | 2146 | 2165 | 2184 | 2203 |
     | 19  |  Vahid   | Unity         | 1862 | 1881 | 1900 | 1919 | 1938 | 1957 | 1976 | 1995 | 2014 | 2033 | 2052 | 2071 | 2090 | 2109 | 2128 | 2147 | 2166 | 2185 | 2204 |
-    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    +-----+----------+---------------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+
 
 =head1 METHODS
 
@@ -248,7 +251,7 @@ sub dow
 
 =head2 get_calendar(yyyy, mm)
 
-Return calendar for given year and month in Bahai calendar. It return current month of Bahai
+Return  calendar for given year and month in Bahai calendar. It returns current month of Bahai
 calendar if no argument is passed in.
 
     use strict; use warnings;
@@ -504,7 +507,8 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 
 Please report any bugs or feature requests to C<bug-calendar-bahai at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Calendar-Bahai>.  I will
-be notified, and then you'll automatically be notified of progress on your bug as I make changes.
+be  notified ,  and  then you will automatically be notified of progress on your bug as I make 
+changes.
 
 =head1 SUPPORT
 
@@ -538,15 +542,16 @@ L<http://search.cpan.org/dist/Calendar-Bahai/>
 
 Copyright 2011 Mohammad S Anwar.
 
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
+This program  is  free  software; you can redistribute it and/or modify it under  the terms of
+either :  the  GNU General Public License as published by the Free Software Foundation; or the 
+Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
 
 =head1 DISCLAIMER
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+This  program  is  distributed  in  the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 =cut
 

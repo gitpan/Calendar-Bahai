@@ -1,5 +1,8 @@
 Revision history for Calendar-Bahai
 
+0.04    Mon Apr 18 15:47:00 2011
+        - Cosmetics changes.
+
 0.03    Tue Apr 12 12:29:29 2011
         - Fixed the internal method _validate_date().
         - Added unit test 01-test-case.t
