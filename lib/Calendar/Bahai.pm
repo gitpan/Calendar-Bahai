@@ -8,11 +8,11 @@ Calendar::Bahai - Interface to Bahai Calendar.
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Carp;
 use Readonly;
@@ -83,12 +83,12 @@ sub new
     return $self;
 }
 
-=head1 SYNOPSIS
+=head1 DESCRIPTION
 
 The  Bahai  calendar  started  from  the original Badi calendar, created by the Bab. The Bahai
-calendar  is composed of 19 months, each with 19 days. Years in the Bahai calendar are counted 
-from Thursday, 21 March 1844,the beginning of the Bahai Era or Badi Era (abbreviated BE/B.E.). 
-Year 1 BE thus began at sundown 20 March 1844. Using the Bahai names for the weekday and month,  
+calendar  is composed of 19 months, each with 19 days. Years in the Bahai calendar are counted
+from Thursday, 21 March 1844,the beginning of the Bahai Era or Badi Era (abbreviated BE/B.E.).
+Year 1 BE thus began at sundown 20 March 1844. Using the Bahai names for the weekday and month
 day one of the Bahai Era was Istijlal (Majesty), 1 Baha (Splendour) 1 BE.
 Bahai Calendar for the month of Baha year 168 BE.
 
@@ -104,26 +104,26 @@ Bahai Calendar for the month of Baha year 168 BE.
     +-------+---------------+----------------+------------------+
     | Month | Name (Arabic) | Name (English) |  Gregorian Dates |
     +-------+---------------+----------------+------------------+
-    |   1   | Baha          | Splendour      | 21 Mar - 08 Apr  | 
-    |   2   | Jalal         | Glory          | 09 Apr - 27 Apr  | 
-    |   3   | Jamal         | Beauty         | 28 Apr - 16 May  | 
-    |   4   | Azamat        | Grandeur       | 17 May - 04 Jun  | 
-    |   5   | Nur           | Light          | 05 Jun - 23 Jun  | 
-    |   6   | Rahmat        | Mercy          | 24 Jun - 12 Jul  | 
-    |   7   | Kalimat       | Words          | 13 Jul - 31 Jul  | 
-    |   8   | Kamal         | Perfection     | 01 Aug - 19 Aug  | 
-    |   9   | Asma          | Names          | 20 Aug - 07 Sep  | 
-    |  10   | Izzat         | Might          | 08 Sep - 26 Sep  | 
-    |  11   | Mashiyyat     | Will           | 27 Sep - 15 Oct  | 
-    |  12   | Ilm           | Knowledge      | 16 Oct - 03 Nov  | 
-    |  13   | Qudrat        | Power          | 04 Nov - 22 Nov  | 
-    |  14   | Qawl          | Speech         | 23 Nov - 11 Dec  | 
-    |  15   | Masail        | Questions      | 12 Dec - 30 Dec  | 
-    |  16   | Sharaf        | Honour         | 31 Dec - 18 Jan  | 
-    |  17   | Sultan        | Sovereignty    | 19 Jan - 06 Feb  | 
-    |  18   | Mulk          | Dominion       | 07 Feb - 25 Feb  | 
-    |       | Ayyam-i-Ha    | The Days of Ha | 26 Feb - 01 Mar  | 
-    |  19   | Ala           | Loftiness      | 02 Mar - 20 Mar  | 
+    |   1   | Baha          | Splendour      | 21 Mar - 08 Apr  |
+    |   2   | Jalal         | Glory          | 09 Apr - 27 Apr  |
+    |   3   | Jamal         | Beauty         | 28 Apr - 16 May  |
+    |   4   | Azamat        | Grandeur       | 17 May - 04 Jun  |
+    |   5   | Nur           | Light          | 05 Jun - 23 Jun  |
+    |   6   | Rahmat        | Mercy          | 24 Jun - 12 Jul  |
+    |   7   | Kalimat       | Words          | 13 Jul - 31 Jul  |
+    |   8   | Kamal         | Perfection     | 01 Aug - 19 Aug  |
+    |   9   | Asma          | Names          | 20 Aug - 07 Sep  |
+    |  10   | Izzat         | Might          | 08 Sep - 26 Sep  |
+    |  11   | Mashiyyat     | Will           | 27 Sep - 15 Oct  |
+    |  12   | Ilm           | Knowledge      | 16 Oct - 03 Nov  |
+    |  13   | Qudrat        | Power          | 04 Nov - 22 Nov  |
+    |  14   | Qawl          | Speech         | 23 Nov - 11 Dec  |
+    |  15   | Masail        | Questions      | 12 Dec - 30 Dec  |
+    |  16   | Sharaf        | Honour         | 31 Dec - 18 Jan  |
+    |  17   | Sultan        | Sovereignty    | 19 Jan - 06 Feb  |
+    |  18   | Mulk          | Dominion       | 07 Feb - 25 Feb  |
+    |       | Ayyam-i-Ha    | The Days of Ha | 26 Feb - 01 Mar  |
+    |  19   | Ala           | Loftiness      | 02 Mar - 20 Mar  |
     |       |               |                |(Month of fasting)|
     +-------+---------------+----------------+------------------+
 
@@ -140,14 +140,14 @@ Bahai Calendar for the month of Baha year 168 BE.
     | Istijlal      | Majesty        | Thursday    |
     | Istiqlal      | Independence   | Friday      |
     +---------------+----------------+-------------+
-    
+
 =head1 Kull-i-Shay and Vahid
 
 Also  existing  in  the  Bahai  calendar system is a 19-year cycle called Vahid and a 361-year
-(19x19)  supercycle  called  Kull-i-Shay (literally, "All Things").  Each of the 19 years in a 
-Vahid  has been given a name as shown in the table below. The 9th Vahid of the 1st Kull-i-Shay  
-started  on 21 March 1996, and the 10th Vahid will begin in 2015. The current Bahai year, year 
-168 BE (21 March 2011 - 20 March 2012),  is year Badi of the 9th Vahid of the 1st Kull-i-Shay. 
+(19x19)  supercycle  called  Kull-i-Shay (literally, "All Things").  Each of the 19 years in a
+Vahid  has been given a name as shown in the table below. The 9th Vahid of the 1st Kull-i-Shay
+started  on 21 March 1996, and the 10th Vahid will begin in 2015. The current Bahai year, year
+168 BE (21 March 2011 - 20 March 2012),  is year Badi of the 9th Vahid of the 1st Kull-i-Shay.
 The 2nd Kull-i-Shay will begin in 2205.
 
     +-----+----------+---------------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+------+
@@ -160,7 +160,7 @@ The 2nd Kull-i-Shay will begin in 2205.
     |  5  |  Bab     | Gate          | 1848 | 1867 | 1886 | 1905 | 1924 | 1943 | 1962 | 1981 | 2000 | 2019 | 2038 | 2057 | 2076 | 2095 | 2114 | 2133 | 2152 | 2171 | 2190 |
     |  6  |  Vav     | V             | 1849 | 1868 | 1887 | 1906 | 1925 | 1944 | 1963 | 1982 | 2001 | 2020 | 2039 | 2058 | 2077 | 2096 | 2115 | 2134 | 2153 | 2172 | 2191 |
     |  7  |  Abad    | Eternity      | 1850 | 1869 | 1888 | 1907 | 1926 | 1945 | 1964 | 1983 | 2002 | 2021 | 2040 | 2059 | 2078 | 2097 | 2116 | 2135 | 2154 | 2173 | 2192 |
-    |  8  |  Jad     | Generosity    | 1851 | 1870 | 1889 | 1908 | 1927 | 1946 | 1965 | 1984 | 2003 | 2022 | 2041 | 2060 | 2079 | 2098 | 2117 | 2136 | 2155 | 2174 | 2193 | 
+    |  8  |  Jad     | Generosity    | 1851 | 1870 | 1889 | 1908 | 1927 | 1946 | 1965 | 1984 | 2003 | 2022 | 2041 | 2060 | 2079 | 2098 | 2117 | 2136 | 2155 | 2174 | 2193 |
     |  9  |  Baha    | Splendour     | 1852 | 1871 | 1890 | 1909 | 1928 | 1947 | 1966 | 1985 | 2004 | 2023 | 2042 | 2061 | 2080 | 2099 | 2118 | 2137 | 2156 | 2175 | 2194 |
     | 10  |  Hubb    | Love          | 1853 | 1872 | 1891 | 1910 | 1929 | 1948 | 1967 | 1986 | 2005 | 2024 | 2043 | 2062 | 2081 | 2100 | 2119 | 2138 | 2157 | 2176 | 2195 |
     | 11  |  Bahhaj  | Delightful    | 1854 | 1873 | 1892 | 1911 | 1930 | 1949 | 1968 | 1987 | 2006 | 2025 | 2044 | 2063 | 2082 | 2101 | 2120 | 2139 | 2158 | 2177 | 2196 |
@@ -282,7 +282,7 @@ sub get_calendar
         $calendar = sprintf("\n\t%s [%d BE]\n", $MONTHS->[$self->{mm}], $yyyy);
         $mm   = $self->{mm};
     }
-    
+
     $calendar .= "\nSun  Mon  Tue  Wed  Thu  Fri  Sat\n";
     $start_index = $self->dow($yyyy, $mm, 1);
     map { $calendar .= "     " } (1..($start_index%=7));
@@ -300,7 +300,7 @@ Convert Gregorian date to Bahai date.
 
     use strict; use warnings;
     use Calendar::Bahai;
-    
+
     my $calendar = Calendar::Bahai->new();
     my ($major, $cycle, $yyyy, $mm, $dd) = $calendar->from_gregorian(2011, 3, 25);
 
@@ -322,7 +322,7 @@ Convert Bahai date to Gregorian date.
 
     use strict; use warnings;
     use Calendar::Bahai;
-    
+
     my $calendar = Calendar::Bahai->new();
     my ($yyyy, $mm, $dd) = $calendar->to_gregorian();
 
@@ -336,7 +336,7 @@ sub to_gregorian
     my $yyyy  = shift;
     my $mm    = shift;
     my $dd    = shift;
-    
+
     $major = $self->{major} unless defined $major;
     $cycle = $self->{cycle} unless defined $cycle;
     $yyyy  = $self->{yyyy}  unless defined $yyyy;
@@ -352,7 +352,7 @@ Convert Julian date to Bahai date.
 
     use strict; use warnings;
     use Calendar::Bahai;
-    
+
     my $calendar = Calendar::Bahai->new();
     my ($major, $cycle, $yyyy, $mm, $dd) = $calendar->from_julian(2400124.5);
 
@@ -374,7 +374,7 @@ sub from_julian
 
     $bys = $gy - ($bstarty + ((($j1 <= $julian) && ($julian <= $j2)) ? 1 : 0));
     ($major, $cycle, $yyyy) = _get_major_cycle_year($bys);
-    
+
     $dd    = $julian - $self->to_julian($major, $cycle, $yyyy, 1, 1);
     $bld   = $self->to_julian($major, $cycle, $yyyy, 20, 1);
     $mm    = ($julian >= $bld) ? 20 : (floor($dd / 19) + 1);
@@ -389,7 +389,7 @@ Convert Bahai date to Julian date.
 
     use strict; use warnings;
     use Calendar::Bahai;
-    
+
     my $calendar = Calendar::Bahai->new();
     my $julian   = $calendar->to_julian();
 
@@ -466,11 +466,11 @@ sub _julian_to_gregorian
 sub _get_major_cycle_year
 {
     my $bys = shift;
-    
+
     my $major = floor($bys / 361) + 1;
     my $cycle = floor(($bys % 361) / 19) + 1;
     my $yyyy  = ($bys % 19) + 1;
-    
+
     return ($major, $cycle, $yyyy);
 }
 
@@ -504,7 +504,7 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 
 Please report any bugs or feature requests to C<bug-calendar-bahai at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Calendar-Bahai>.  I will
-be  notified ,  and  then you will automatically be notified of progress on your bug as I make 
+be  notified ,  and  then you will automatically be notified of progress on your bug as I make
 changes.
 
 =head1 SUPPORT
@@ -540,14 +540,14 @@ L<http://search.cpan.org/dist/Calendar-Bahai/>
 Copyright 2011 Mohammad S Anwar.
 
 This program  is  free  software; you can redistribute it and/or modify it under  the terms of
-either :  the  GNU General Public License as published by the Free Software Foundation; or the 
+either :  the  GNU General Public License as published by the Free Software Foundation; or the
 Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
 
 =head1 DISCLAIMER
 
-This  program  is  distributed  in  the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+This  program  is  distributed  in  the hope that it will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 =cut
