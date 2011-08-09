@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.66.
+signed via the Module::Signature module, version 0.68.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,14 +14,14 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 33458e6b6eeb9e14d62d407cf847702743640548 Build.PL
-SHA1 97651718c7139a8b390ae94758d8df180e531150 Changes
+SHA1 e926de3a7a3a40c8bf133c49ac0029872e30bc39 Build.PL
+SHA1 3d922265ed5153d1651046c5f2c5e60597eb3491 Changes
 SHA1 820d23a7c21a86fea0e0a437ccbd4db0809aceb3 MANIFEST
 SHA1 7d20e4e840781030202bb045d5ab81b3fd1b68b0 MANIFEST.SKIP
-SHA1 abb965c044c02ad3eebaff9958bfaef571038ea9 META.yml
-SHA1 49ad2576b402ab5864a7c9b2a718ed1f14cd277c Makefile.PL
-SHA1 76e1b7dafc86f222e6031b22284030a7c291aea1 README
-SHA1 2052c89693e25d33be86e75aa403cd8024c2959c lib/Calendar/Bahai.pm
+SHA1 7d54aa3e7cfbff8bb9e30f9de02487f119e8dc12 META.yml
+SHA1 ca0a7cbbbd86c6a807bda9a7c16a51e081aafa23 Makefile.PL
+SHA1 726ef509a41f5bfceefe8a35bd25f0d52db05e2d README
+SHA1 cdf696a39aa3cf91c4309a661e53ac291699646f lib/Calendar/Bahai.pm
 SHA1 65051878d8d95f5c1266192b49af5fe64f937c82 t/00-load.t
 SHA1 3d1f472c3daf1d38dac524e5646e4e9770936349 t/01-test-case.t
 SHA1 2b8ffb7e4f399af95d092743846ac8d438f2c53e t/manifest.t
@@ -29,11 +29,11 @@ SHA1 0765c9ff0cc4319f415bb08d0053b7717a8284a2 t/pod.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2.0.14 (MingW32)
 
-iQEcBAEBAgAGBQJNrUVZAAoJEPYcXBXhRYOhCYIIAJGhKkGkjbg0JEZIip8H50B4
-tTttjSU0RhlEbWJ37vPz7E1pbnap/Q1UldN3/uopw+MyqF0uC0zC6IfY/qM+9D4F
-liuknlqsEiBo6vZSavvqnKU0DIydJW/sXamlxQoQ6MG0qohruwqv0vavtBtFRrtm
-okpPJdh4Qf9GwgWi+JxoxZ+c8MerlUP5SBwEZ8dpNSNpikEXRYt96Ogumjfs91w/
-EaAxinbt/WfZ0cC4Fsm6DPSSVTDUO+9VFE2pTOzLS+Lnm7VXzGnFIWMD27v5Z0R2
-XMe9n/I5PJEhPsghflUvdamoTxtvc1aWYgNsVGWYrJe7vdbBhZDiIVJJohTplMY=
-=1AiH
+iQEcBAEBAgAGBQJOQU99AAoJEPYcXBXhRYOha4MIAJpp3jWxSwmokNKd4//GPy9C
+uqetXsYnPipl0zYawHsY70nqM1yWgyD1vxEDoLileVv5WDPCiIPdNfZVYguFownp
+u34chtJJAKJSqper+3Fcb3ZqCp7VOkUOPuorR0OhQAQaIaq+NuZQIA8DDmH9N42e
+GvEW5CwhgMYVxwLS5N/wBw0qBdoVm3/Wq0PzVwL8/aNv7TnppzGMVr3s7a2vyVuV
+wey53p/iDr6UWvZv0EcKqwXs/6SMvOpv3uls9O4Mr0WRSS1KeHJr1d3bM0Fm6+hd
+u7uvIXqyRCi2hxRNfS9oB5YuqczpEAXRwWsmmq0go1p7ot+px7WBPVUGcpqznGY=
+=U/ik
 -----END PGP SIGNATURE-----

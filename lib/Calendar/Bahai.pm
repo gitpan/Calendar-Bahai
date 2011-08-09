@@ -8,11 +8,11 @@ Calendar::Bahai - Interface to Bahai Calendar.
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =cut
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 use Carp;
 use Readonly;
@@ -102,7 +102,7 @@ Bahai Calendar for the month of Baha year 168 BE.
 =head1 MONTHS
 
     +-------+---------------+----------------+------------------+
-    | Month | Name (Arabic) | Name (English) |  Gregorian Dates |
+    | Month | Name (Arabic) | Name (English) | Gregorian Dates  |
     +-------+---------------+----------------+------------------+
     |   1   | Baha          | Splendour      | 21 Mar - 08 Apr  |
     |   2   | Jalal         | Glory          | 09 Apr - 27 Apr  |
