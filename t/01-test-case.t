@@ -1,5 +1,3 @@
-#!perl
-
 use Test::More tests => 3;
 
 use strict; use warnings;
